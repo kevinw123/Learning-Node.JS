@@ -1,17 +1,13 @@
 import React, { Component } from 'react'
 import { StyleSheet,Text, View, Image } from 'react-native';
-import LoginForm from './LoginForm'
+import RegisterForm from './RegisterForm'
 
-export default class Login extends Component {
+export default class Register extends Component {
   render() {
     return (
         <View style={styles.container}>
-          <View style={styles.logoContainer}>
-            <Image style={styles.logo} source={require('../../images/Octocat.png')}/>
-            <Text style={styles.title}>Voice</Text>
-          </View>
           <View style={styles.formContainer}>
-            <LoginForm/>
+            <RegisterForm/>
           </View>
         </View>
     );

@@ -13,11 +13,12 @@ import {
 } from 'react-native';
 import Splash from './Splash';
 import Login from './src/components/Login/Login';
+import Register from './src/components/Register/Register';
 
 export default class GithubApp extends Component {
   render() {
     return (
-      <Login/>
+      <Register/>
     );
   }
 }
