@@ -11,6 +11,9 @@ import {
   Text,
   View
 } from 'react-native';
+import DayItem from './src/day-item';
+
+var DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 export default class weekdays extends Component {
   render() {
@@ -19,6 +22,7 @@ export default class weekdays extends Component {
         <Text>
           Days of the week:
         </Text>
+        <DayItem/>
       </View>
     );
   }
