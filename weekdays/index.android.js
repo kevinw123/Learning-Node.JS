@@ -12,17 +12,23 @@ import {
   View
 } from 'react-native';
 import DayItem from './src/day-item';
+import Moment from 'moment';
 
-var DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 export default class weekdays extends Component {
+  days() {
+    var daysItems = [];
+    for(var i = 0; i < 7; i++){
+      var day = Moment().add(i, 'days'). format('dddd');
+      daysItems.push(<DayItem day={day} daysUntil={i}/>)
+    }
+    return daysItems;
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>
-          Days of the week:
-        </Text>
-        <DayItem day={DAYS[0]}/>
+        {this.days()}
       </View>
     );
   }
