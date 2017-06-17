@@ -22,7 +22,7 @@ export default class weekdays extends Component {
         <Text>
           Days of the week:
         </Text>
-        <DayItem/>
+        <DayItem day={DAYS[0]}/>
       </View>
     );
   }
