@@ -9,27 +9,34 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
+  TouchableHighlight,
   View
 } from 'react-native';
 
 export default class stopwatch extends Component {
   startStopButtion() {
     return (
-      <View>
+      <TouchableHighlight
+      underlayColor="gray"
+      onPress={this.handleStartPress}>
         <Text>
             Start
         </Text>
-      </View>
+      </TouchableHighlight>
     );
+  }
+
+  handleStartPress(){
+    console.log('Start was pressed');
   }
 
   lapButton(){
     return (
-      <View>
+      <TouchableHighlight>
         <Text>
             Lap
         </Text>
-      </View>
+      </TouchableHighlight>
     );
   }
 
