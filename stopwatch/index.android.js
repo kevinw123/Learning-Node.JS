@@ -36,11 +36,23 @@ export default class stopwatch extends Component {
   render() {
     return (
         <View>
-          <Text>
-            00:00:00
-          </Text>
-          {this.startStopButtion()}
-          {this.lapButton()}
+          <View>
+            <View>
+              <Text>
+                00:00:00
+              </Text>
+            </View>
+            <View>
+              {this.startStopButtion()}
+              {this.lapButton()}
+            </View>
+          </View>
+
+          <View>
+            <Text>
+              I am a list of laps
+            </Text>
+          </View>
         </View>
     );
   }
@@ -50,18 +62,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'stretch',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  header: {
+    flex: 1
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  footer: {
+    flex: 1
   },
 });
 
