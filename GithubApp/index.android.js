@@ -14,11 +14,8 @@ import {
 } from 'react-native';
 import {Router, Scene} from 'react-native-router-flux';
 
-import Splash from './Splash';
 import Login from './src/components/Login/Login';
 import Register from './src/components/Register/Register';
-
-
 
 export default class GithubApp extends Component {
 
@@ -27,9 +24,8 @@ export default class GithubApp extends Component {
     return (
       <Router>
         <Scene key="root">
-          <Scene key="splash" component={Splash} title="Splash" initial={true} hideNavBar={true} />
           <Scene key="register" component={Register} hideNavBar={true}/>
-          <Scene key="login" component={Login} hideNavBar={true}/>
+          <Scene key="login" component={Login} initial={true} hideNavBar={true}/>
         </Scene>
       </Router>
     )

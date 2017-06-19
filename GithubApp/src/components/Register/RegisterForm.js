@@ -24,9 +24,9 @@ export default class RegisterForm extends Component {
             secureTextEntry
             style={styles.input} />
 
-            <TouchableOpacity style={styles.buttonContainer}>
-              <Text style={styles.buttonText}>REGISTER</Text>
-            </TouchableOpacity>
+          <TouchableOpacity style={styles.buttonContainer}>
+            <Text style={styles.buttonText}>REGISTER</Text>
+          </TouchableOpacity>
         </View>
     );
   }
