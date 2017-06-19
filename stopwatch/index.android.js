@@ -14,6 +14,12 @@ import {
 } from 'react-native';
 
 export default class stopwatch extends Component {
+  getInitialState(){
+      return {
+        timeElapsed: null
+      }
+  }
+
   startStopButtion() {
     return (
       <TouchableHighlight
@@ -27,7 +33,13 @@ export default class stopwatch extends Component {
   }
 
   handleStartPress(){
-    console.log('Start was pressed');
+    var startTime = new Date();
+
+    setInterval(() => {
+      this.setState({
+        timeElapsed: new Date() - startTime
+      });
+    }, 30);
   }
 
   lapButton(){
@@ -53,7 +65,7 @@ export default class stopwatch extends Component {
           <View style={[styles.header, this.border('yellow')]}>
             <View style={[styles.timeWrapper, this.border('red')]}>
               <Text>
-                00:00:00
+                {this.state.timeElapsed}
               </Text>
             </View>
             <View style={[styles.buttonWrapper, this.border('green')]}>
