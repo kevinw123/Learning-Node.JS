@@ -16,7 +16,7 @@ import {
 export default class stopwatch extends Component {
   getInitialState(){
       return {
-        timeElapsed: null
+        timeElapsed: 0
       }
   }
 
