@@ -9,37 +9,28 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
+  TouchableHighlight,
   View
 } from 'react-native';
-import Splash from './Splash';
+import {Router, Scene} from 'react-native-router-flux';
+
 import Login from './src/components/Login/Login';
 import Register from './src/components/Register/Register';
 
 export default class GithubApp extends Component {
+
+
   render() {
     return (
-      <Register/>
-    );
+      <Router>
+        <Scene key="root">
+          <Scene key="register" component={Register} hideNavBar={true}/>
+          <Scene key="login" component={Login} initial={true} hideNavBar={true}/>
+        </Scene>
+      </Router>
+    )
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
 AppRegistry.registerComponent('GithubApp', () => GithubApp);

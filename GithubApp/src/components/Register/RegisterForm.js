@@ -24,9 +24,9 @@ export default class RegisterForm extends Component {
             secureTextEntry
             style={styles.input} />
 
-            <TouchableOpacity style={styles.buttonContainer}>
-              <Text style={styles.buttonText}>REGISTER</Text>
-            </TouchableOpacity>
+          <TouchableOpacity style={styles.buttonContainer}>
+            <Text style={styles.buttonText}>REGISTER</Text>
+          </TouchableOpacity>
         </View>
     );
   }
@@ -34,7 +34,8 @@ export default class RegisterForm extends Component {
 
 const styles = StyleSheet.create ({
   container: {
-    padding: 20
+    padding: 20,
+    paddingTop: 200
   },
   input: {
     height: 40,
