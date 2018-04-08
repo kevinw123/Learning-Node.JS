@@ -11,11 +11,24 @@ language = 'en'
 data = json.load(open("words_dictionary.json"))
 
 def summarizeOutput(json):
-    print(json.results)
+    print("Word: {}".format(json["results"][0]["word"]))
+    entries = json["results"][0]["lexicalEntries"][0]["entries"][0]
+
+    # Get Definitions
+    definitions = entries["senses"][0]["definitions"]
+    for i in range(len(definitions)):
+        print("Definition {} : {}".format(i + 1, definitions[i]))
+
+    # Examples
+    examples = entries["senses"][0].get("examples", "")
+    if (examples != ""):
+        for i in range(len(examples)):
+            print("Example {} : {}".format(i + 1, examples[i]["text"]))
+
+
 
 # Make Request to get JSON data
 def make_request(word):
-    print(word)
     url = 'https://od-api.oxforddictionaries.com:443/api/v1/entries/' + language + '/' + word.lower()
 
     r = requests.get(url, headers = {'app_id': app_id, 'app_key': app_key})
@@ -30,7 +43,7 @@ def make_request(word):
             else:
                 print("Did not understand entry")
     else:
-        print(r.json())
+        summarizeOutput(r.json())
 
 def isEmpty(word):
     if word.strip() == "":
